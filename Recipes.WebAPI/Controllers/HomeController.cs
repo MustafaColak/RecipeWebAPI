@@ -31,7 +31,7 @@ namespace Recipes.WebAPI.Controllers
         /******************Story 2****************/
 
         [Route("services/recipe/filter/categories")]
-        public IHttpActionResult Gett()
+        public IHttpActionResult GetCategories()
         {
             CategoryModel cm = new CategoryModel();
 
