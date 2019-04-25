@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RecipesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Amount">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Quantity" Type="nvarchar(max)" />
+    <Property Name="Unit" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Directions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="step" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Ingredient">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Amount_Id" Type="int" />
+    <Property Name="Recipe_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="Recipe">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" />
+    <Property Name="Directions_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="RecipeCategory">
+    <Key>
+      <PropertyRef Name="Recipe_Id" />
+      <PropertyRef Name="Category_Id" />
+    </Key>
+    <Property Name="Recipe_Id" Type="int" Nullable="false" />
+    <Property Name="Category_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_dbo_Ingredient_dbo_Amount_Amount_Id">
+    <End Role="Amount" Type="Self.Amount" Multiplicity="0..1" />
+    <End Role="Ingredient" Type="Self.Ingredient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Amount">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Ingredient">
+        <PropertyRef Name="Amount_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Ingredient_dbo_Recipe_Recipe_Id">
+    <End Role="Recipe" Type="Self.Recipe" Multiplicity="0..1" />
+    <End Role="Ingredient" Type="Self.Ingredient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Recipe">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Ingredient">
+        <PropertyRef Name="Recipe_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Recipe_dbo_Directions_Directions_Id">
+    <End Role="Directions" Type="Self.Directions" Multiplicity="0..1" />
+    <End Role="Recipe" Type="Self.Recipe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Directions">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Recipe">
+        <PropertyRef Name="Directions_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_RecipeCategory_dbo_Category_Category_Id">
+    <End Role="Category" Type="Self.Category" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="RecipeCategory" Type="Self.RecipeCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RecipeCategory">
+        <PropertyRef Name="Category_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_RecipeCategory_dbo_Recipe_Recipe_Id">
+    <End Role="Recipe" Type="Self.Recipe" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="RecipeCategory" Type="Self.RecipeCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Recipe">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RecipeCategory">
+        <PropertyRef Name="Recipe_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="RecipesModelStoreContainer">
+    <EntitySet Name="Amount" EntityType="Self.Amount" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Directions" EntityType="Self.Directions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ingredient" EntityType="Self.Ingredient" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Recipe" EntityType="Self.Recipe" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RecipeCategory" EntityType="Self.RecipeCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_dbo_Ingredient_dbo_Amount_Amount_Id" Association="Self.FK_dbo_Ingredient_dbo_Amount_Amount_Id">
+      <End Role="Amount" EntitySet="Amount" />
+      <End Role="Ingredient" EntitySet="Ingredient" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Ingredient_dbo_Recipe_Recipe_Id" Association="Self.FK_dbo_Ingredient_dbo_Recipe_Recipe_Id">
+      <End Role="Recipe" EntitySet="Recipe" />
+      <End Role="Ingredient" EntitySet="Ingredient" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Recipe_dbo_Directions_Directions_Id" Association="Self.FK_dbo_Recipe_dbo_Directions_Directions_Id">
+      <End Role="Directions" EntitySet="Directions" />
+      <End Role="Recipe" EntitySet="Recipe" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_RecipeCategory_dbo_Category_Category_Id" Association="Self.FK_dbo_RecipeCategory_dbo_Category_Category_Id">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="RecipeCategory" EntitySet="RecipeCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_RecipeCategory_dbo_Recipe_Recipe_Id" Association="Self.FK_dbo_RecipeCategory_dbo_Recipe_Recipe_Id">
+      <End Role="Recipe" EntitySet="Recipe" />
+      <End Role="RecipeCategory" EntitySet="RecipeCategory" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

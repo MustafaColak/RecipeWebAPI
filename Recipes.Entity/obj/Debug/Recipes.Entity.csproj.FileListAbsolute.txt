@@ -1,0 +1,9 @@
+C:\Users\Mustafa\source\repos\Recipes\Recipes.Entity\bin\Debug\Recipes.Entity.dll
+C:\Users\Mustafa\source\repos\Recipes\Recipes.Entity\bin\Debug\Recipes.Entity.pdb
+C:\Users\Mustafa\source\repos\Recipes\Recipes.Entity\obj\Debug\Recipes.Entity.csprojAssemblyReference.cache
+C:\Users\Mustafa\source\repos\Recipes\Recipes.Entity\obj\Debug\Recipes.Entity.csproj.CoreCompileInputs.cache
+C:\Users\Mustafa\source\repos\Recipes\Recipes.Entity\obj\Debug\Recipes.Entity.dll
+C:\Users\Mustafa\source\repos\Recipes\Recipes.Entity\obj\Debug\Recipes.Entity.pdb
+C:\Users\Mustafa\source\repos\Recipes\Recipes.Entity\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Mustafa\source\repos\Recipes\Recipes.Entity\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Mustafa\source\repos\Recipes\Recipes.Entity\obj\Debug\Recipes.Entity.csproj.CopyComplete

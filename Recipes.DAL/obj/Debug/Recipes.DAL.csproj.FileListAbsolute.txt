@@ -1,0 +1,16 @@
+C:\Users\Mustafa\source\repos\Recipes\Recipes.DAL\bin\Debug\Recipes.DAL.dll.config
+C:\Users\Mustafa\source\repos\Recipes\Recipes.DAL\bin\Debug\Recipes.DAL.dll
+C:\Users\Mustafa\source\repos\Recipes\Recipes.DAL\bin\Debug\Recipes.DAL.pdb
+C:\Users\Mustafa\source\repos\Recipes\Recipes.DAL\bin\Debug\EntityFramework.dll
+C:\Users\Mustafa\source\repos\Recipes\Recipes.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Mustafa\source\repos\Recipes\Recipes.DAL\bin\Debug\Recipes.Entity.dll
+C:\Users\Mustafa\source\repos\Recipes\Recipes.DAL\bin\Debug\Recipes.Entity.pdb
+C:\Users\Mustafa\source\repos\Recipes\Recipes.DAL\bin\Debug\EntityFramework.xml
+C:\Users\Mustafa\source\repos\Recipes\Recipes.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Mustafa\source\repos\Recipes\Recipes.DAL\obj\Debug\Recipes.DAL.csprojAssemblyReference.cache
+C:\Users\Mustafa\source\repos\Recipes\Recipes.DAL\obj\Debug\Recipes.DAL.csproj.CoreCompileInputs.cache
+C:\Users\Mustafa\source\repos\Recipes\Recipes.DAL\obj\Debug\Recipes.DAL.csproj.CopyComplete
+C:\Users\Mustafa\source\repos\Recipes\Recipes.DAL\obj\Debug\Recipes.DAL.dll
+C:\Users\Mustafa\source\repos\Recipes\Recipes.DAL\obj\Debug\Recipes.DAL.pdb
+C:\Users\Mustafa\source\repos\Recipes\Recipes.DAL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Mustafa\source\repos\Recipes\Recipes.DAL\bin\Debug\Newtonsoft.Json.xml
